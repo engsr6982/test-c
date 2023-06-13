@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "Build Plugin",
-            //"program": "C:\\Server\\Beta\\bedrock_server_mod.exe",
+            "program": "C:\\Server\\Beta\\bedrock_server_mod.exe",
             "type": "cppvsdbg",
             "request": "launch",
             "args": [
