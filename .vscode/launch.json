@@ -23,7 +23,7 @@
             "cwd": "${workspaceRoot}",
             "environment": [],
             // 调试控制台  internalConsole使用VSC内置控制台  externalTerminal外部控制台
-            "console": "internalConsole",
+            "console": "externalTerminal",
             // 执行tasks  build任务
             "preLaunchTask": "build",
             "logging": {
