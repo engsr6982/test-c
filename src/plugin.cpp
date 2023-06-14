@@ -16,6 +16,7 @@ extern Logger logger;
 
 void PluginInit()
 {
+    std::cout << "12345667";
     if (!std::filesystem::exists("./plugins/EULA"))
     {
         std::string str;//声明一个str的字符串变量

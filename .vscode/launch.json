@@ -29,6 +29,22 @@
             "logging": {
                 "moduleLoad": false
             }
+        },
+        // 附加调试
+        {
+            "name": "(vsdbg) 附加",
+            // 调试方式，vs调试
+            "type": "cppvsdbg",
+            // 类型为附加调试
+            "request": "attach",
+            // 选择进程
+            "processId": "${command:pickProcess}",
+            "logging": {
+                "moduleLoad": false,
+                "trace": true
+            },
+            // 附加PDB
+            "visualizerFile":"D:\\Repo\\test-c\\build\\Release\\plugin.pdb"
         }
     ]
 }
