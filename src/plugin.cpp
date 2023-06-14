@@ -8,9 +8,12 @@
 #include <llapi/RegCommandAPI.h>
 #include <llapi/DynamicCommandAPI.h>
 
+#include <llapi/FormUI.h>
+
 extern Logger logger;
 
 void RegCommand();
+void test_form(Player* pl);
 
 void PluginInit()
 {
@@ -43,7 +46,31 @@ void RegCommand()
             // 回调函数的参数为command、origin、output和results
             // command表示执行的命令，origin表示命令的来源，output表示命令输出，results表示结果集
             output.success("hello"); // 回调函数的执行体，表示输出"hello"
+            auto player = origin.getPlayer();
+            test_form(player);
         });
     // 安装命令 并转移所有权
     DynamicCommand::setup(std::move(cmd));
+}
+
+using namespace Form;
+void test_form(Player* pl) {
+    CustomForm form2("Information Collection Form");                               // Initialize the form with title
+        form2.addLabel("label1", "Personal Information")                               // Add a label shows "Personal Information"
+        .addInput("username", "Your Name")                                         // Add an input line to gather player's name
+        .addDropdown("sex", "Your Sex", { "Male","Female","Secret" })              // Add a dropdown to gather player's sex
+        .addSlider("age", "Your Age", 3, 100)                                      // Add a slider to gather player's age
+
+        .addLabel("label2", "MC Information")                                      // Add a label shows "MC Information"
+        .addToggle("licensed", "Purchased a licensed Minecraft?", true)            // Add a toggle about whether he buys a licensed mc or not
+        .addStepSlider("skill", "Skill Lvl", { "Beginner", "Amateur", "Pro" })     // Add a step slider shows his game skill level
+
+        .sendTo(pl,                                     // Send the form to a player called "yqs112358"
+            [](Player* player, auto result)                                        // Callback function to process the result
+            {
+                if (result.empty())                                                // Player cancelled the form
+                    return;
+                player->sendText("You have commited the form.");
+                player->sendFormattedText("Your name: {}", result["username"]->getString());
+            });
 }
