@@ -1,15 +1,9 @@
 ﻿#include <string>
 #include <iostream>
 
-#include <llapi/mc/CommandOrigin.hpp>
-#include <llapi/mc/CommandOutput.hpp>
-#include <llapi/mc/ItemStack.hpp>
 #include <llapi/mc/Level.hpp>
 #include <llapi/mc/Player.hpp>
-#include <llapi/mc/Types.hpp>
 
-#include <llapi/EventAPI.h>
-#include <llapi/GlobalServiceAPI.h>
 // 命令头文件
 #include <llapi/RegCommandAPI.h>
 #include <llapi/DynamicCommandAPI.h>
