@@ -33,3 +33,19 @@ CMake Tools
 就会生成dll到build/release/目录下
 
 至于启动bds调试我也还没弄明白，只是编译没问题了
+
+
+
+23/6/14
+
+cmake编译报错
+```console
+  Building Custom Rule D:/Repo/TPR/CMakeLists.txt
+LINK : fatal error C1047: 对象或库文件“D:\Repo\TPR\SDK\lib\SymDBHelper.lib”是使用与其他对象(如“plugin.dir\Debug\dllmain.obj”)不同的编译器版本创建的；请使用相同的编译
+器重新生成所有对象和库 [D:\Repo\TPR\build\plugin.v
+cxproj]
+LINK : fatal error LNK1257: 代码生成失败 [D:\Repo\TPR\build\plugin.vcxproj]
+```
+
+解决方法  删除sdk/lib/bedrock开头的两个文件重试
+实在不行，重新拉取SDK
