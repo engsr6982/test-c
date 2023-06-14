@@ -15,37 +15,27 @@
 // ***************************************************************************************
 // ***************************************************************************************
 
-// Please FILL UP the content in this area before developing your plugin, and DO NOT modify any code
-// outside this area.
+// 插件名称
+#define PLUGIN_NAME "CPP Test"
+// 简介
+#define PLUGIN_INTRODUCTION "Hello CPP"
+// 作者
+#define PLUGIN_AUTHOR "PPOUI"
 
-//static_assert(false, "Please modify your plugin information below and delete this line!");
-
-// The basic descriptions of your plugin
-// Note that the the plugin name CAN ONLY CONTAIN Enlish alphabet, digit, dash(-) and
-// underscore(_). 
-#define PLUGIN_NAME "HelloWorldPrinter"
-// Describe what your plugin does
-// We recommend you start the introduction with a third-person singular verb.
-#define PLUGIN_INTRODUCTION "Prints \"Hello, World!\" in the console."
-#define PLUGIN_AUTHOR "Me"
-
-// The version of your plugin. If you do not know how to set it, please refer
-// to https://semver.org/ .
+// 主版本号  1.0.0
 #define PLUGIN_VERSION_MAJOR 0
+// 次版本号
 #define PLUGIN_VERSION_MINOR 1
+// 修订号
 #define PLUGIN_VERSION_REVISION 0
 #define PLUGIN_VERSION_BUILD 0
 #define PLUGIN_VERSION_ACTIONS 0
 
-// The stage of your plugin, which can be PLUGIN_VERSION_DEV, PLUGIN_VERSION_BETA
-// and PLUGIN_VERSION_RELEASE
-#define PLUGIN_VERSION_STATUS PLUGIN_VERSION_DEV
-
-// The target protocol version of your plugin. If you do not know how to set it,
-// please start the latest version of LiteLoaderBDS and get the protocol version.
-// If you are confident about the version compatibility of your plugin, you can
-// just comment this line (NOT RECOMMENDED).
+// BDS协议版本号
 #define TARGET_BDS_PROTOCOL_VERSION 575
+
+// 插件版本状态 PLUGIN_VERSION_RELEASE, PLUGIN_VERSION_DEV, PLUGIN_VERSION_BETA
+#define PLUGIN_VERSION_STATUS PLUGIN_VERSION_DEV
 
 // ***************************************************************************************
 // ***************************************************************************************
